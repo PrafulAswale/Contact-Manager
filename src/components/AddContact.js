@@ -55,7 +55,7 @@ const AddContact = () => {
 
   return (
     <div className="container">
-      <h1 className="display-3 text-center fw-bold">Add Contact</h1>
+      <h1 className="display-3 text-center fw-bold text-white">Add Contact</h1>
       <div className="row">
         <div className="col-md-6 shadow mx-auto p-5">
           {/*Add contact form*/}

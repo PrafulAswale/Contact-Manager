@@ -69,7 +69,9 @@ const EditContact = () => {
     <div className="container">
       {currentContact ? (
         <div>
-          <h1 className="display-3 text-center fw-bold">Edit Contact {id}</h1>
+          <h1 className="display-3 text-center text-white fw-bold">
+            Edit Contact {id}
+          </h1>
           <div className="row">
             <div className="col-md-6 shadow mx-auto p-5">
               {/* edit contact form*/}
