@@ -14,7 +14,7 @@ function Home() {
   };
   return (
     <div className="container">
-      <h1>Contact List</h1>
+      <h1 className="display-3 text-center fw-bold">Contact List</h1>
       <div className="col-md-12 my-5 text-end">
         <Link to="/add" className="btn btn-outline-dark">
           Add Contact
