@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created a contact list app to manage contacts.
+* [Contact List](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
