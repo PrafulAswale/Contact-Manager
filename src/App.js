@@ -2,13 +2,16 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import "./App.css";
 
+// all components
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import AddContact from "./components/AddContact";
 import EditContact from "./components/EditContact";
 
 function App() {
+  //fetching API
   const dispatch = useDispatch();
   useEffect(() => {
     const data = [];
@@ -30,7 +33,7 @@ function App() {
     promise();
   });
   return (
-    <div className="App">
+    <div className="App-header">
       <ToastContainer />
       <Navbar />
       <Routes>

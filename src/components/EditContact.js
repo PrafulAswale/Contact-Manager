@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const EditContact = () => {
+  //useState for name, email, number
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -16,7 +17,7 @@ const EditContact = () => {
   const currentContact = contacts.find(
     (contact) => contact.id === parseInt(id)
   );
-
+  //setting name, email, number
   useEffect(() => {
     if (currentContact) {
       setName(currentContact.name);
@@ -28,14 +29,18 @@ const EditContact = () => {
   const handelSubmit = (e) => {
     e.preventDefault();
 
+    //checking email exists or not
     const checkEmail = contacts.find(
       (contact) => contact.id !== parseInt(id) && contact.email === email
     );
+
+    //checking number exists or not
     const checkNumber = contacts.find(
       (contact) =>
         contact.id !== parseInt(id) && contact.number === parseInt(number)
     );
 
+    //checking all fileds entered or not
     if (!email || !number || !name) {
       return toast.warning("Please fill in all fields!");
     }
@@ -54,7 +59,7 @@ const EditContact = () => {
       email,
       number,
     };
-
+    //dispatch
     dispatch({ type: "UPDATE_CONTACT", payload: data });
     toast.success("Contact updated successfully!!");
     navigate("/");
@@ -67,6 +72,7 @@ const EditContact = () => {
           <h1 className="display-3 text-center fw-bold">Edit Contact {id}</h1>
           <div className="row">
             <div className="col-md-6 shadow mx-auto p-5">
+              {/* edit contact form*/}
               <form className="text-center" onSubmit={handelSubmit}>
                 <div className="form-group mb-3">
                   <input

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AddContact = () => {
+  // useState for name, email, number
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
@@ -13,16 +14,21 @@ const AddContact = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //event handler
   const handelSubmit = (e) => {
     e.preventDefault();
 
+    //checking email already exists or not
     const checkEmail = contacts.find(
       (contact) => contact.email === email && email
     );
+
+    //checking number already exists or not
     const checkNumber = contacts.find(
       (contact) => contact.number === parseInt(number) && number
     );
 
+    // checking all field entered or not
     if (!email || !number || !name) {
       return toast.warning("Please fill in all fields!");
     }
@@ -52,6 +58,7 @@ const AddContact = () => {
       <h1 className="display-3 text-center fw-bold">Add Contact</h1>
       <div className="row">
         <div className="col-md-6 shadow mx-auto p-5">
+          {/*Add contact form*/}
           <form className="text-center" onSubmit={handelSubmit}>
             <div className="form-group mb-3">
               <input

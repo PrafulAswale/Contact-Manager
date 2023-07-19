@@ -8,6 +8,7 @@ function Home() {
 
   const dispatch = useDispatch();
 
+  //delete fuction
   const deleteContact = (id) => {
     dispatch({ type: "DELETE_CONTACT", payload: id });
     toast.success("Contact deleted successfully!");
@@ -21,6 +22,7 @@ function Home() {
         </Link>
       </div>
       <div className="row">
+        {/* mapping all contacts*/}
         {contacts.map((contact, id) => {
           return (
             <div className="col-3">
