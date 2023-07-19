@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import "./App.css";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import AddContact from "./components/AddContact";
+import EditContact from "./components/EditContact";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,9 +32,12 @@ function App() {
   return (
     <div className="App">
       <ToastContainer />
-      <header className="App-header">
-        <h1>Home</h1>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home />}></Route>
+        <Route path="/add" element={<AddContact />}></Route>
+        <Route path="/edit/:id" element={<EditContact />}></Route>
+      </Routes>
     </div>
   );
 }
